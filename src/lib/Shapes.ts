@@ -8,6 +8,7 @@ import { LiteralValidator } from '../validators/LiteralValidator';
 import { NeverValidator } from '../validators/NeverValidator';
 import { NullishValidator } from '../validators/NullishValidator';
 import { NumberValidator } from '../validators/NumberValidator';
+import { MappedObjectValidator, ObjectValidator } from '../validators/ObjectValidator';
 import { PassthroughValidator } from '../validators/PassthroughValidator';
 import { SetValidator } from '../validators/SetValidator';
 import { StringValidator } from '../validators/StringValidator';
@@ -32,6 +33,10 @@ export class Shapes {
 
 	public get date() {
 		return new DateValidator();
+	}
+
+	public object<T>(shape: MappedObjectValidator<T>) {
+		return new ObjectValidator(shape);
 	}
 
 	public get undefined() {

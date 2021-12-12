@@ -227,7 +227,7 @@ dish.parse(['Iberian ham', 10, new Date()]);
 
 ```typescript
 // Properties are required by default:
-const animal = s.object({ // TODO
+const animal = s.object({
 	name: s.string,
 	age: s.number
 });
